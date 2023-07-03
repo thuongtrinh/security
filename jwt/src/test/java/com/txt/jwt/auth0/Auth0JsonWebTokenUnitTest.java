@@ -21,11 +21,11 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 
 public class Auth0JsonWebTokenUnitTest {
 
-    private static final String SECRET = "baeldung";
-    private static final String SECRET_NEW = "baeldung.com";
-    private static final String ISSUER = "Baeldung";
+    private static final String SECRET = "syspro";
+    private static final String SECRET_NEW = "sysprotxt.com";
+    private static final String ISSUER = "Syspro";
     private static final String DATA_CLAIM = "userId";
-    private static final String DATA = "1234";
+    private static final String DATA = "12345";
 
     private static Algorithm algorithm;
     private static Algorithm algorithmWithDifferentSecret;

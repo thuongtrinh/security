@@ -16,8 +16,8 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 
 public class JWTDecodeUnitTest {
 
-    private static final String SECRET = "baeldung";
-    private static final String ISSUER = "Baeldung";
+    private static final String SECRET = "syspro";
+    private static final String ISSUER = "Syspro";
     private static final long TOKEN_VALIDITY_IN_MILLIS = 1000L;
 
     private static Algorithm algorithm;
