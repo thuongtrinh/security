@@ -17,6 +17,7 @@
         <spring-security-crypto.version>6.0.3</spring-security-crypto.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <bouncycastle.version>1.70</bouncycastle.version>
+        <slf4j.version>2.0.5</slf4j.version>
     </properties>
 
     <dependencies>
@@ -54,6 +55,17 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>${jaxb-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
 
