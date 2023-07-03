@@ -15,8 +15,15 @@ import java.security.cert.X509Certificate;
 public class Thumbprint {
 
     public static void main(String[] args) throws CertificateException, IOException, NoSuchAlgorithmException {
-        X509Certificate certObject = getCertObject("D:\\github\\security\\core-java-security\\src\\main\\resources\\syspro-cert.pem");
+        X509Certificate certObject = getCertObject("D:\\github\\security\\core-java-security\\src\\main\\resources\\keys\\syspro-cert.pem");
         System.out.println(getThumbprint(certObject));
+        System.out.println(getThumbprintWithApache(certObject));
+    }
+
+    private static String getThumbprint(X509Certificate cert) throws NoSuchAlgorithmException, CertificateEncodingException {
+        MessageDigest md = MessageDigest.getInstance("SHA-1");
+        md.update(cert.getEncoded());
+        return DatatypeConverter.printHexBinary(md.digest()).toLowerCase();
     }
 
     public static X509Certificate getCertObject(String filePath) throws IOException, CertificateException {
@@ -24,12 +31,6 @@ public class Thumbprint {
             CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
             return (X509Certificate) certificateFactory.generateCertificate(is);
         }
-    }
-
-    private static String getThumbprint(X509Certificate cert) throws NoSuchAlgorithmException, CertificateEncodingException {
-        MessageDigest md = MessageDigest.getInstance("SHA-1");
-        md.update(cert.getEncoded());
-        return DatatypeConverter.printHexBinary(md.digest()).toLowerCase();
     }
 
     private static String getThumbprintWithApache(X509Certificate cert) throws CertificateEncodingException {
